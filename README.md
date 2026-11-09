@@ -169,3 +169,10 @@ behavior. Not affiliated with Elgato, Corsair, or Microsoft.
 
 MIT. See [LICENSE](LICENSE). The scripts are provided as-is; force-killing a
 wedged capture with `-ForceIfHung` is at your own risk.
+
+## AI Assistance Disclosure
+
+This project was developed with assistance from OpenAI Codex for crash-dump
+analysis, scripting, and documentation. The repository owner directed the work,
+reviewed and tested the results on the affected hardware, and remains
+responsible for the project's technical claims and final decisions.
