@@ -11,6 +11,19 @@ a vendor fix — the driver behind it hasn't been touched since 2016. This
 repo documents the root cause from an actual crash dump and gives a drop-in
 workaround.
 
+## Quick fix
+
+Close Game Capture HD with the included script instead of Task Manager's
+**End Task**:
+
+```powershell
+.\scripts\Stop-GameCapture.ps1
+```
+
+If you automate captures, use `scripts\Capture-Elgato-Native.ps1` instead so
+there is no GUI process to kill at all. Both scripts are explained in
+[The fix](#the-fix).
+
 ## Root cause
 
 `ElgatoGC658.sys` (service `ElgatoGC658Y`) is the AVStream kernel driver
@@ -147,7 +160,12 @@ specific bug -- if you're hitting something that looks similar on newer
 hardware, it's a different driver and worth reporting to Elgato/Corsair
 directly, since those products are still supported.
 
-## Disclaimer
+## Credits and provenance
 
 This is independent, unaffiliated reverse-engineering of observed crash
 behavior. Not affiliated with Elgato, Corsair, or Microsoft.
+
+## License
+
+MIT. See [LICENSE](LICENSE). The scripts are provided as-is; force-killing a
+wedged capture with `-ForceIfHung` is at your own risk.
